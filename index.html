@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 MN Flavor Ban- HF2177</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .message { margin-bottom: 20px; }
+        .button { 
+            margin: 10px 0; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h2>2024 MN Flavor Ban- HF2177</h2>
+        <p>Deadline to submit testimony or register as a speaker is Monday March 4th, 2024. Hearing is scheduled for Tuesday March 5th, 2024.</p>
+        <p>Click on one of the options below to send a pre-drafted message to the committee admin to record testimony.</p>
+    </div>
+    <button class="button" onclick="sendEmail('owners')">Business Owners- CLICK HERE</button><br>
+    <button class="button" onclick="sendEmail('employees')">Employees- CLICK HERE</button><br>
+    <button class="button" onclick="sendEmail('consumers')">Consumers- CLICK HERE</button> 
+
+    <script>
+        function sendEmail(role) {
+            const email = 'josh.sande@house.mn.gov';
+            const bcc = 'stopmnflavorban@gmail.com';
+            const subject = encodeURIComponent('Oppose HF 2177');
+            let body;
+
+            if (role === 'owners') {
+                body = encodeURIComponent('As a Minnesota business owner, taxpayer, and a voter I am submitting this testimony in opposition of HF 2177.');
+            } else if (role === 'employees') {
+                body = encodeURIComponent('As a Minnesota taxpayer, voter, and an employee in the industry this bill targets, I am submitting this testimony in Opposition to HF 2177.');
+            } else if (role === 'consumers') {
+                body = encodeURIComponent('As a Minnesota voter, taxpayer, and a concerned citizen, I am submitting this testimony in opposition to HF 2177.');
+            }
+
+            window.location.href = `mailto:${email}?bcc=${bcc}&subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
