@@ -19,21 +19,18 @@
     <div class="message">
         <h2>2024 MN Flavor Ban- HF2177</h2>
         <p>Deadline to submit testimony or register as a speaker is Monday March 4th, 2024. Hearing is scheduled for Tuesday March 5th, 2024.</p>
-        <h3>Suggested talking points to put in your email testimony</h3>
-        <p>- banning flavors would  significantly eliminate the billions of dollars collected in tobacco tax and sales tax revenues
-<br>- it would shut down hundreds of businesses in the state and thousands of employees would lose their jobs. 
-<br>- it would drive adults to purchase these products from unregulated markets </p>
-    <h4>Click on one of the options below to send a pre-drafted message to the committee admin to record testimony.</h4>
+        <p>Click on one of the options below to send a pre-drafted message to the committee admin to record testimony.</p>
     </div>
     <button class="button" onclick="sendEmail('owners')">Business Owners- CLICK HERE</button><br>
     <button class="button" onclick="sendEmail('employees')">Employees- CLICK HERE</button><br>
-    <button class="button" onclick="sendEmail('consumers')">Consumers- CLICK HERE</button> 
+    <button class="button" onclick="sendEmail('consumers')">Consumers- CLICK HERE</button> <br>
+    <button class="button" onclick="sendEmail('citizen')">Concerned Citizen- CLICK HERE</button> 
 
     <script>
         function sendEmail(role) {
-            const email = 'josh.sande@house.mn.gov';
+            const email = 'josh.sande@house.mn.gov, rep.patty.acomb@house.mn.gov, rep.jeff.backer@house.mn.gov, rep.kristin.bahner@house.mn.gov, rep.robert.bierman@house.mn.gov, rep.ned.carroll@house.mn.gov, rep.steve.elkins@house.mn.gov, rep.peter.fischer@house.mn.gov, rep.amanda.hemmingsen-jaeger@house.mn.gov, rep.kaohly.her@house.mn.gov, rep.deb.kiel@house.mn.gov, rep.tina.liebling@house.mn.gov, rep.tom.murphy@house.mn.gov, rep.danny.nadeau@house.mn.gov, rep.anne.neu@house.mn.gov, rep.bernie.perryman@house.mn.gov, rep.duane.quam@house.mn.gov, rep.liz.reyer@house.mn.gov, rep.joe.schomacker@house.mn.gov, rep.andy.smith@house.mn.gov';
             const bcc = 'stopmnflavorban@gmail.com';
-            const subject = encodeURIComponent('Oppose HF 2177');
+            const subject = encodeURIComponent('I, and over 300,000 voters Oppose HF 2177');
             let body;
 
             if (role === 'owners') {
@@ -41,7 +38,9 @@
             } else if (role === 'employees') {
                 body = encodeURIComponent('As a Minnesota taxpayer, voter, and an employee in the industry this bill targets, I am submitting this testimony in Opposition to HF 2177.');
             } else if (role === 'consumers') {
-                body = encodeURIComponent('As a Minnesota voter, taxpayer, and a concerned citizen, I am submitting this testimony in opposition to HF 2177.');
+                body = encodeURIComponent('I am a Minnesota voter, taxpayer and a consumer of flavored nicotine products, and I am urging you to oppose HF 2177.\nStates that enacted flavor bans saw increased smoking rates, and huge reduction in revenue; contrary to public health goals. Vaping flavors helped me, and many others quit smoking.\nThe FDA recognizes some flavored vaping products as less harmful alternatives. In the end, banning flavors could push me to seek out-of-state or online alternatives, or worse, go back to cigarettes.\n\nThank you for considering the unintended consequences of HF 2177 on public health.');
+            }else if (role === 'citizen') {
+                body = encodeURIComponent('Dear Committee Members,\nAs a concerned citizen of Minnesota, I strongly oppose House File 2177 (HF 2177), which aims to ban flavored tobacco products in our state. While I understand the goal of protecting public health and curbing youth tobacco use, a complete ban on flavored tobacco may have unintended consequences. Many adults who use these products prefer flavors like menthol or fruit. Banning these options could limit harm reduction alternatives for those trying to quit smoking. Additionally, small businesses, including local tobacco retailers, would be adversely affected by this ban. Instead of outright bans, let’s focus on education and prevention programs to discourage youth tobacco use. Empowering individuals with information is more effective than prohibition. Thank you for your attention to this matter.\nSincerely,');
             }
 
             window.location.href = `mailto:${email}?bcc=${bcc}&subject=${subject}&body=${body}`;
